@@ -1,4 +1,7 @@
 # IR-Remote-Receiver-Python-Module
+
+*Making the library installable.*
+
 Python (2 or 3) module for receiving IR remote control signals (NEC format) on a Raspberry Pi 
 using a TSOP382 IR Receiver
 
