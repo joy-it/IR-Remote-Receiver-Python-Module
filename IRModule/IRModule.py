@@ -73,10 +73,10 @@ class IRRemote:
         while True:                
                 check = (time.time()-timer)*1000
                 if check > self.checkTime:                    
-                    print(check, len(self.pList))
+                    if self.verbose == True: print(check, len(self.pList))
                     break
                 if len(self.pList) > self.maxPulseListLength:
-                    print(check, len(self.pList))
+                    if self.verbose == True: print(check, len(self.pList))
                     break
                 time.sleep(0.001)
 
