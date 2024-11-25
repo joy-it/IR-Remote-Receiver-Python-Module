@@ -1,6 +1,6 @@
 # IR-Remote-Receiver-Python-Module
 
-*Making the library installable.*
+*Making the library installable and using gpiozero instead of RPi.GPIO.*
 
 Python (2 or 3) module for receiving IR remote control signals (NEC format) on a Raspberry Pi 
 using a TSOP382 IR Receiver
@@ -20,10 +20,8 @@ To set up a IR object use:
 - ir = IRModule.IRRemote(callback=yourfunctname)
 
 To set up the Pi GPIO callback the following is required
-- GPIO.setwarnings(False)
-- GPIO.setmode(GPIO.BCM)      # uses numbering outside circles
-- GPIO.setup(irPin,GPIO.IN)   # irPin = Pi pin connected to the output of the TSOP382 receiver
-- GPIO.add_event_detect(irPin,GPIO.BOTH,callback=ir.pWidth)
+- IR = DigitalInputDevice(pin = irPin, bounce_time = 0.000005)   # irPin = Pi pin connected to the output of the TSOP382 receiver
+- IR.when_activated =ir.pWidth & IR.when_deactivated =ir.pWidth 
 
 To setup your program to provide the IR code being sent use the following
 - ir.set_callback('DECODE')

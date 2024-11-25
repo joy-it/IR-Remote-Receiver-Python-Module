@@ -22,7 +22,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import RPi.GPIO as GPIO
 import time, threading 
 
 class IRRemote:    
@@ -214,71 +213,3 @@ class IRRemote:
         self.repeatCodeOn = repeat
 
         return
-
-
-if __name__ == "__main__":
-
-    def remote_callback(code):        
-
-        # Codes listed below are for the
-        # Sparkfun 9 button remote
-
-        #print(hex(code))
-
-        if code == 0x10EFD827:
-            print("Power")
-        elif code == 0x10EFF807:
-            print('A')
-        elif code == 0x10EF7887:
-            print('B')
-        elif code == 0x10EF58A7:
-            print('C')
-        elif code == 0x10EFA05F:
-            print('Up Arrow')
-        elif code == 0x10EF00FF:
-            print('Down Arrow')
-        elif code == 0x10EF10EF:
-            print('Left Arrow')
-        elif code == 0x10EF807F:
-            print('Right Arrow')
-        elif code == 0x10EF20DF:
-            print('Select')
-        else:
-            print('.')  # unknown code
-
-        return
-
-    ir = IRRemote('DECODE')  
-            
-    GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BCM)  # uses numbering outside circles
-    GPIO.setup(16,GPIO.IN)   # set pin 16 to input
-    GPIO.add_event_detect(16,GPIO.BOTH,callback=ir.pWidth)
-
-    ir.set_verbose()
-    print('Starting IR remote sensing using DECODE function')
-
-    time.sleep(5)
-    print('Setting up callback')
-    ir.set_verbose(False)
-    ir.set_callback(remote_callback)
-    ir.set_repeat(True)
-
-    try:
-
-        while True:
-            time.sleep(1)
-
-    except:
-        print('Removing callback and cleaning up GPIO')
-        ir.remove_callback()
-        GPIO.cleanup(16)
-
-
-    
-
-    
-                    
-      
-    
-    
