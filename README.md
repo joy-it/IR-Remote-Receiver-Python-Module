@@ -21,35 +21,34 @@ The TSOP382 IR receiver has 3 legs which are connected as follows:
 
 ## Usage
 To set up a IR object use:
-```
+```python
 ir = IRModule.IRRemote(callback=yourfunctname)
 ```
 
 To set up the Pi GPIO callback the following is required
-```
+```python
 IR = DigitalInputDevice(pin = irPin, bounce_time = 0.000005)   # irPin = Pi pin connected to the output of the TSOP382 receiver
 IR.when_activated =ir.pWidth
 IR.when_deactivated =ir.pWidth 
 ```
 
 To setup your program to provide the IR code being sent use the following
-```
+```python
 ir.set_callback('DECODE')
 ```
 
 To get a listing of the time spans of the IR pulse highs and lows use
-```
+```python
 ir.set_verbose(True)
 ```
 
 Current user functions include:
-```
+```python
 set_callback(callback = yourfunctname)
 remove_callback()
 set_verbose(verbose = False)
 set_repeat(repeat = True)
 ```
-
 ## Updates
 **Apr 3, 2020 Update**
 - added repeat code recognition functionality
@@ -59,4 +58,3 @@ set_repeat(repeat = True)
 - made library installable
 **Mar 2, 2026 Update**
 - added repository to [PyPi](https://pypi.org/project/JoyIT-IR-Remote-Receiver/1.0.0/)
-
