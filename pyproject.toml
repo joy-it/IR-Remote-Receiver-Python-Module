@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "JoyIT_IR_Remote_Receiver"
+version = "1.0.0"
+authors = [
+  { name="owainm713"},
+  { name="Joy-IT", email="service@joy-it.net" }
+]
+description = "Python 3 module for receiving IR remote control signals (NEC format) on a Raspberry Pi using a TSOP382 IR Receiver"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/joy-it/IR-Remote-Receiver-Python-Module"

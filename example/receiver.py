@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 from gpiozero import DigitalInputDevice
-import IRModule
+import JoyIT_IR_Remote_Receiver
 import time
 
 
