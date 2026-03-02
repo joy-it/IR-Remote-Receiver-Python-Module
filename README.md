@@ -53,8 +53,10 @@ set_repeat(repeat = True)
 **Apr 3, 2020 Update**
 - added repeat code recognition functionality
 - added the set_repeat() function to enable/disable the repeat code functionality
+
 **Noc 25, 2025 Update**
 - exchanged 'RPi.GPIO' with 'gpiozero' to ensure compatibility with Raspberry Pi 5
 - made library installable
+
 **Mar 2, 2026 Update**
 - added repository to [PyPi](https://pypi.org/project/JoyIT-IR-Remote-Receiver/1.0.0/)
