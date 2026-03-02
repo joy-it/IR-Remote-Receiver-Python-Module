@@ -4,7 +4,7 @@
 > This library was forked to make it installable and making it compatible with the Raspberry Pi 5. Therefore 'RPi.GPIO' is exchanged with 'gpiozero'.
 
 ## Installation
-```
+```shell
 pip install JoyIT_IR_Remote_Receiver
 ```
 
