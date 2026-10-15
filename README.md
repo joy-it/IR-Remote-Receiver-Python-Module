@@ -5,7 +5,7 @@
 
 ## Installation
 ```console
-pip install JoyIT_IR_Remote_Receiver
+pip install JoyIT-IR-Remote-Receiver
 ```
 
 Python 3 module for receiving IR remote control signals (NEC format) on a Raspberry Pi  using a TSOP382 IR Receiver
